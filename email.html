@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" />
+    <button type="submit">Click</button>
+    <p></p>
+    <script>
+      let input = document.querySelector("input");
+      let button = document.querySelector("button");
+      let p = document.querySelector("p");
+
+      button.addEventListener("click", () => {
+        let string = input.value;
+        let at = string.search("@");
+        let name;
+        if (at > 0) {
+          name = string.slice(0, at);
+        } else {
+          name = string;
+        }
+        p.innerHTML =
+          "Hello " +
+          " " +
+          `<span style="color:green;font-size:40px">${name}</span>`;
+      });
+    </script>
+  </body>
+</html>
